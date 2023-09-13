@@ -6,7 +6,6 @@ void SendUsartMsg(UART_HandleTypeDef *huart);
 
 void SendSpiMsg(SPI_HandleTypeDef *hspi);
 
-
 void ReceiveUsartMsg(UART_HandleTypeDef *huart);
 
 void ReceiveSpiMsg(SPI_HandleTypeDef *hspi);
