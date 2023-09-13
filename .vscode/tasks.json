@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Firmware",
+      "type": "shell",
+      "command": "make",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "echo": true
+      }
+    },
+    {
+      "label": "Flash Firmware with OpenOCD",
+      "dependsOn": ["Build Firmware"],
+      "type": "shell",
+      "command": "openocd",
+      "args": ["-f", "st_nucleo_f4.cfg", "-c", "program build/BridgeUsartSpi.elf  verify reset exit"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "echo": true
+      }
+    },
+    {
+      "label": "Build and Flash Firmware",
+      "dependsOn": ["Build Firmware", "Flash Firmware with OpenOCD"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    }
+  ]
+}

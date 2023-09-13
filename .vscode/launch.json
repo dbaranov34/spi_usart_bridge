@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Firmware",
+        "type": "cortex-debug",
+        "request": "launch",
+        "servertype": "openocd",
+        "serverpath": "/usr/bin/openocd",
+        "cwd": "${workspaceRoot}",
+        "internalConsoleOptions": "openOnSessionStart",
+        "preLaunchTask": "Build and Flash Firmware",
+        "executable": "${workspaceRoot}/build/BridgeUsartSpi.elf",
+        "armToolchainPath": "/opt/gcc-arm-none-eabi/bin/",
+        "device": "STM32F429",
+        "v1": true,
+        "svdFile": "${workspaceRoot}/STM32F.svd",
+        "configFiles": [
+          "/usr/share/openocd/scripts/boards/st_nucleo_f4.cfg"
+        ],
+      }
+    ]
+  }
+  
