@@ -516,9 +516,13 @@ void StartSrvUsart(void *argument)
 {
   /* USER CODE BEGIN StartSrvUsart */
   /* Infinite loop */
+
+
+  ReceiveUsartMsg(&huart2);
   for(;;)
-  {
-    osDelay(1);
+  {    
+    ForwardMessagesToSpi(&hspi4);
+    osDelay(10);
   }
   /* USER CODE END StartSrvUsart */
 }
@@ -534,9 +538,12 @@ void StartSrvSpi(void *argument)
 {
   /* USER CODE BEGIN StartSrvSpi */
   /* Infinite loop */
+    ReceiveSpiMsg(&hspi4);
+
   for(;;)
   {
-    osDelay(1);
+    ForwardMessagesToUart(&huart2);
+    osDelay(10);
   }
   /* USER CODE END StartSrvSpi */
 }
@@ -554,7 +561,7 @@ void StartSenderUsart(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    SendUsartMsg(&huart2);
+    SendUsartMsg(&huart3);
     osDelay(1);
   }
   /* USER CODE END StartSenderUsart */
@@ -573,8 +580,8 @@ void StartSenderSpi(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    SendSpiMsg(&hspi4);
-    osDelay(1);
+
+    SendSpiMsg(&hspi1);
   }
   /* USER CODE END StartSenderSpi */
 }

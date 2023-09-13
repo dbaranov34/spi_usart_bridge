@@ -4,6 +4,7 @@
     "cortex-debug.openocdPath": "/usr/bin/openocd",
     "files.associations": {
         "sstream": "c",
-        "message_format.h": "c"
+        "message_format.h": "c",
+        "main.h": "c"
     }
 }
