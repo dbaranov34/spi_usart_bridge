@@ -20,7 +20,7 @@
       "dependsOn": ["Build Firmware"],
       "type": "shell",
       "command": "openocd",
-      "args": ["-f", "st_nucleo_f4.cfg", "-c", "program build/BridgeUsartSpi.elf  verify reset exit"],
+      "args": ["-f", "st_nucleo_f4.cfg", "-c", "gdb_port 50000", "-c", "program build/BridgeUsartSpi.elf  verify reset exit"],
       "group": {
         "kind": "build",
         "isDefault": false

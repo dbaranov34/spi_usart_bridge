@@ -5,6 +5,8 @@ Demo of a bridge between USART and SPI interfaces for Nucleo-F429ZI board using 
 ## Prerequisites
 - arm-gcc toolchain (download from https://developer.arm.com/downloads/-/gnu-rm)
 - OpenOCD (On debian: ```sudo apt install openocd```)
+- Note: that debugger will need ```libncurses5``` (```sudo apt-get install libncurses5```)
+
 
 it is recommended to use vscode to run, debug and flash firmware.
 
